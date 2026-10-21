@@ -1,0 +1,49 @@
+# Anurag Pardeshi
+
+> Turning ideas into software solutions.
+
+Anurag Pardeshi is a software engineer based in Indore, Madhya Pradesh, India. He builds scalable products with clean code and purposeful engineering.
+
+## When to Use This Site
+
+Use this site to learn about Anurag's projects, tech stack, and contact information.
+
+## Experience
+
+- **Associate Software Engineer**, [iMentus Technologies](https://www.linkedin.com/company/imentus/) — Nov 2025 to Present; 1 year of experience
+
+## Pages
+
+- [Home](/): Portfolio homepage
+- [About](/about): About Anurag, projects, and tech stack
+- [Projects](/projects): Live projects and clearly marked sample entries
+- [Developers](/developers): Projects and machine-readable resources
+- [Contact](/contact): Email, phone, social profiles, and location
+- [Privacy](/privacy): Website privacy policy
+
+## Recent Projects
+
+- [Stretus](https://stretus.com/): AI-assisted strategy infrastructure for financial platforms
+- [TeethFast](https://lab.teethfast.in/): Digital platform for dental lab orders
+
+The [Projects page](/projects) also includes clearly marked sample entries for future work.
+
+## Tech Stack
+
+TypeScript, React, Next.js, Node.js, Golang, Solidity, Rust, Microservices, Python, PostgreSQL, Docker, AWS.
+
+## Contact Information
+
+- **Email**: pardeshianurag22@gmail.com
+- **Alternative Email**: Anuragpardeshi2001@gmail.com
+- **Phone**: +91 84353 04050
+- **Location**: Indore, Madhya Pradesh, India
+- **GitHub**: [github.com/anuragpardeshii](https://github.com/anuragpardeshii)
+- **LinkedIn**: [linkedin.com/in/pardeshianurag22](https://www.linkedin.com/in/pardeshianurag22/)
+- **Twitter/X**: [x.com/anuragpardeshi](https://x.com/anuragpardeshi)
+
+## Machine-Readable Resources
+
+- [Sitemap](/sitemap.xml)
+- [Robots](/robots.txt)
+- [OpenAPI](/openapi.json)

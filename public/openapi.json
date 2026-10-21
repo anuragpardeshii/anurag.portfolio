@@ -1,0 +1,175 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Anurag Pardeshi Developer API",
+    "version": "1.0.0",
+    "description": "Public read-only content negotiation and developer resource API for Anurag Pardeshi.",
+    "contact": {
+      "name": "Anurag Pardeshi",
+      "email": "pardeshianurag22@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Current site origin"
+    }
+  ],
+  "paths": {
+    "/api/markdown": {
+      "get": {
+        "operationId": "getMarkdownPage",
+        "summary": "Get page markdown representation",
+        "description": "Retrieves the structured markdown representation of any public page on the site.",
+        "parameters": [
+          {
+            "name": "path",
+            "in": "query",
+            "required": false,
+            "description": "The page path to retrieve (default is /)",
+            "schema": {
+              "type": "string",
+              "default": "/"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Structured markdown content",
+            "headers": {
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept, Accept-Encoding"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": 100
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": 99
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": 60
+                }
+              }
+            },
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarkdownResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Page not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "operationId": "getLlmsTxt",
+        "summary": "Get LLMs site guide",
+        "description": "Standard llmstxt.org v2 site guide with when-to-use instructions and developer resources.",
+        "responses": {
+          "200": {
+            "description": "llms.txt content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MarkdownResponse": {
+        "type": "object",
+        "required": ["path", "markdown"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "example": "/"
+          },
+          "markdown": {
+            "type": "string",
+            "example": "# Anurag Pardeshi\n\nSoftware Engineer"
+          }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "required": ["type", "title", "status", "detail"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri",
+            "example": "/developers#errors"
+          },
+          "title": {
+            "type": "string",
+            "example": "Not Found"
+          },
+          "status": {
+            "type": "integer",
+            "example": 404
+          },
+          "detail": {
+            "type": "string",
+            "example": "The requested page was not found."
+          },
+          "code": {
+            "type": "string",
+            "example": "page_not_found"
+          },
+          "resolution": {
+            "type": "string",
+            "example": "Check /sitemap.xml or /llms.txt for available pages."
+          }
+        }
+      }
+    }
+  }
+}
