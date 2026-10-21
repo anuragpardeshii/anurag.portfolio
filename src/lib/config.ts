@@ -21,6 +21,11 @@ export const siteConfig = {
     url: "https://www.linkedin.com/company/imentus/",
   },
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  availability: {
+    title: "Open to Work",
+    preference: "Full-time | Remote",
+    details: "Open to full-time & freelance roles",
+  },
   stickyNote: "Ship fast. Iterate often. Write clean code.",
   footerQuote: "Build systems that outlast the hype.",
   techStack: [

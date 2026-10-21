@@ -4,6 +4,11 @@ import { siteConfig } from "@/lib/config";
 export function Hero() {
   return (
     <>
+      <div className="hero-enter mb-9 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-medium text-gray-500 shadow-sm sm:text-sm">
+        <span className="h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true" />
+        {siteConfig.availability.details}
+      </div>
+
       <div className="hero-enter">
         <h1>
           <span className="hero-headline">{siteConfig.tagline}</span>
