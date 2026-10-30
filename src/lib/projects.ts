@@ -1,53 +1,80 @@
-import { siteConfig } from "./config";
-
-export type GalleryProject = {
+export type Project = {
   name: string;
   description: string;
-  category: "Web" | "Backend";
+  category: "Web" | "AI";
   tags: readonly string[];
-  preview: "teethfast" | "signal" | "workspace" | "chain";
-  href?: string;
-  status: "Live project" | "Sample project";
+  preview: string;
+  url: string;
 };
 
-export const featuredProject = {
-  ...siteConfig.projects[0],
+export const featuredProject: Project = {
+  name: "Stretus",
+  description:
+    "AI-assisted strategy infrastructure for financial platforms, covering strategy creation, validation, backtesting, and governance.",
+  category: "AI",
   tags: ["Strategy", "Fintech", "Platform"],
+  preview: "/projects/stretus.webp",
+  url: "https://stretus.com/",
 };
 
-// Sample entries are intentionally separate from the real projects in siteConfig.
-// Replace them with verified work and links as the portfolio grows.
-export const galleryProjects: GalleryProject[] = [
+export const projects: readonly Project[] = [
+  featuredProject,
   {
-    ...siteConfig.projects[1],
-    href: siteConfig.projects[1].url,
+    name: "TeethFast",
+    description:
+      "A digital dental lab platform for exploring restoration services, sharing case files, and managing lab orders.",
     category: "Web",
     tags: ["Dental", "Orders", "Web platform"],
-    preview: "teethfast",
-    status: "Live project",
+    preview: "/projects/teethfast.webp",
+    url: "https://lab.teethfast.in/",
   },
   {
-    name: "Signal API",
-    description: "Sample concept for an API monitoring service. Replace with a real project when ready.",
-    category: "Backend",
-    tags: ["API", "Monitoring", "Backend"],
-    preview: "signal",
-    status: "Sample project",
-  },
-  {
-    name: "Workspace UI",
-    description: "Sample concept for a team dashboard with tasks and activity views.",
+    name: "Wisdom World Academy",
+    description:
+      "A school website for exploring programmes, discovering campus life, and planning a visit in Indore.",
     category: "Web",
-    tags: ["Dashboard", "UI", "Web"],
-    preview: "workspace",
-    status: "Sample project",
+    tags: ["Education", "School", "Admissions"],
+    preview: "/projects/wisdom-world-academy.webp",
+    url: "https://www.wisdomworldacademy.co.in/",
   },
   {
-    name: "Chain Explorer",
-    description: "Sample concept for browsing on-chain activity. Replace with a real project later.",
+    name: "Clozt",
+    description:
+      "A fashion storefront for discovering collections, browsing new arrivals, and shopping everyday essentials.",
     category: "Web",
-    tags: ["Web3", "Explorer", "Web"],
-    preview: "chain",
-    status: "Sample project",
+    tags: ["E-commerce", "Fashion", "Storefront"],
+    preview: "/projects/clozt.webp",
+    url: "https://clozt.vercel.app/",
+  },
+  {
+    name: "Bagiya",
+    description:
+      "A mindful productivity app that turns focus sessions into progress in a growing virtual garden.",
+    category: "Web",
+    tags: ["Productivity", "Focus", "Gamification"],
+    preview: "/projects/bagiya.webp",
+    url: "https://bagiya.vercel.app/",
+  },
+  {
+    name: "Built-fast (Agentic)",
+    description:
+      "An AI website builder for turning ideas into websites, refining the result, and exporting editable source code.",
+    category: "AI",
+    tags: ["Agentic AI", "Website builder", "Developer tools"],
+    preview: "/projects/built-fast.webp",
+    url: "https://agentic-workflow.vercel.app/",
+  },
+  {
+    name: "Out",
+    description:
+      "A cricket squad draft game for building an XI, challenging friends, and playing simulated matches.",
+    category: "Web",
+    tags: ["Cricket", "Gaming", "Multiplayer"],
+    preview: "/projects/out.webp",
+    url: "https://out-khaki-pi.vercel.app/",
   },
 ];
+
+export const galleryProjects = projects.filter(
+  (project) => project.url !== featuredProject.url,
+);

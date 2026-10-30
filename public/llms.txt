@@ -16,21 +16,33 @@ Use this site to learn about Anurag's projects, tech stack, and contact informat
 
 - [Home](/): Portfolio homepage
 - [About](/about): About Anurag, projects, and tech stack
-- [Projects](/projects): Live projects and clearly marked sample entries
+- [Projects](/projects): Seven live projects with homepage previews and website links
 - [Developers](/developers): Projects and machine-readable resources
 - [Contact](/contact): Email, phone, social profiles, and location
 - [Privacy](/privacy): Website privacy policy
 
 ## Recent Projects
 
+- [Clozt](https://clozt.vercel.app/): Fashion storefront for collections, new arrivals, and everyday essentials
+- [Wisdom World Academy](https://www.wisdomworldacademy.co.in/): School website with programmes, campus life, and visits in Indore
+- [Bagiya](https://bagiya.vercel.app/): Mindful productivity app that turns focus sessions into a virtual garden
+- [Built-fast (Agentic)](https://agentic-workflow.vercel.app/): AI website builder with editable source code exports
 - [Stretus](https://stretus.com/): AI-assisted strategy infrastructure for financial platforms
-- [TeethFast](https://lab.teethfast.in/): Digital platform for dental lab orders
-
-The [Projects page](/projects) also includes clearly marked sample entries for future work.
+- [TeethFast](https://lab.teethfast.in/): Digital dental lab platform for services, case files, and lab orders
+- [Out](https://out-khaki-pi.vercel.app/): Cricket squad draft game with simulated matches and challenges with friends
 
 ## Tech Stack
 
 TypeScript, React, Next.js, Node.js, Golang, Solidity, Rust, Microservices, Python, PostgreSQL, Docker, AWS.
+
+## Services
+
+- **Web Development**: Websites and web applications.
+- **Business Solutions**: CRM, ERP, HRMS.
+- **Data & Analytics**: Dashboards, reporting, BI.
+- **Automation Solutions**: Workflow automation, AI agents, integrations.
+- **Industry-Specific SaaS**: School, healthcare, logistics, retail.
+- **Cloud & IT Solutions**: Hosting, deployment, APIs, maintenance.
 
 ## Contact Information
 

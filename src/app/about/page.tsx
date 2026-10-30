@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ProjectsGallery } from "@/components/client/ProjectsGallery";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -10,20 +11,30 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-2xl px-6 py-20">
-      <h1 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
-        About {siteConfig.name}
+    <main className="mx-auto w-full max-w-2xl px-6 py-20">
+      <h1 className="text-gray-900">
+        <span className="mb-6 block text-3xl font-bold tracking-tight md:text-4xl">
+          About {siteConfig.name}
+        </span>
       </h1>
 
       <section className="mb-8">
         <p className="mb-4 leading-relaxed text-gray-600">
-          {siteConfig.name} is a software engineer based in {siteConfig.location}.
-          {" "}{siteConfig.bio}
+          I’m {siteConfig.name}, a software engineer based in {siteConfig.location}.
+          {" "}I build scalable products with clean, maintainable code.
         </p>
         <p className="leading-relaxed text-gray-600">
-          I enjoy turning ideas into software solutions, from user-facing
-          experiences to the systems that support them.
+          I enjoy turning ideas into practical software, from intuitive user
+          interfaces to the systems that support them.
         </p>
+        <a
+          href={siteConfig.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-link mt-5 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+        >
+          Connect on LinkedIn <span aria-hidden="true">↗</span>
+        </a>
       </section>
 
       <section className="mb-8">
@@ -46,22 +57,7 @@ export default function AboutPage() {
 
       <section className="mb-8">
         <h2 className="mb-4 text-xl font-semibold text-gray-800">Projects</h2>
-        <div className="space-y-3">
-          {siteConfig.projects.map((project) => (
-            <a
-              key={project.name}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-xl border border-gray-100 bg-white p-4 transition-all hover:border-blue-200 hover:shadow-sm"
-            >
-              <p className="font-semibold text-gray-800">{project.name} &rarr;</p>
-              <p className="mt-1 text-sm leading-relaxed text-gray-500">
-                {project.description}
-              </p>
-            </a>
-          ))}
-        </div>
+        <ProjectsGallery initialVisibleCount={2} showFilters={false} />
       </section>
 
       <section className="mb-8">

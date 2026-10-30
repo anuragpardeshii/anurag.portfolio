@@ -33,8 +33,7 @@ export function Hero() {
         </p>
         <h2>Featured Engineering Projects</h2>
         <p>
-          Recent projects include Stretus, an AI-assisted strategy platform,
-          and TeethFast, a digital dental lab platform.
+          Projects include {siteConfig.projects.map((project) => project.name).join(", ")}.
         </p>
         <h2>Contact</h2>
         <p>

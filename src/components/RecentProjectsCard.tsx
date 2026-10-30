@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 
 export function RecentProjectsCard() {
@@ -8,21 +9,25 @@ export function RecentProjectsCard() {
           Recent Projects
         </p>
         <div className="space-y-3">
-          {siteConfig.projects.map((project) => (
+          {siteConfig.projects.slice(0, 3).map((project) => (
             <a
               key={project.name}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start justify-between gap-2 transition-opacity hover:opacity-80 focus-visible:rounded focus-visible:outline-2 focus-visible:outline-blue-500"
+              className="block transition-opacity hover:opacity-80 focus-visible:rounded focus-visible:outline-2 focus-visible:outline-blue-500"
             >
-              <div>
-                <p className="text-xs font-semibold text-gray-800">{project.name}</p>
-                <p className="mt-0.5 text-xs text-gray-400">{project.description}</p>
-              </div>
+              <p className="text-xs font-semibold text-gray-800">{project.name}</p>
+              <p className="mt-0.5 text-[10px] text-gray-500">{project.tags[0]}</p>
             </a>
           ))}
         </div>
+        <Link
+          href="/projects"
+          className="mt-4 inline-flex text-xs font-semibold text-blue-600 hover:underline focus-visible:outline-2 focus-visible:outline-blue-500"
+        >
+          View all {siteConfig.projects.length} projects <span aria-hidden="true" className="ml-1">↗</span>
+        </Link>
       </div>
     </div>
   );

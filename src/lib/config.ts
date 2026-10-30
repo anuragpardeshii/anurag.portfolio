@@ -1,3 +1,5 @@
+import { projects } from "./projects";
+
 export const siteConfig = {
   name: "Anurag Pardeshi",
   title: "Anurag Pardeshi - Software Engineer",
@@ -28,6 +30,32 @@ export const siteConfig = {
   },
   stickyNote: "Ship fast. Iterate often. Write clean code.",
   footerQuote: "Build systems that outlast the hype.",
+  services: [
+    {
+      name: "Web Development",
+      description: "Websites and web applications.",
+    },
+    {
+      name: "Business Solutions",
+      description: "CRM, ERP, HRMS.",
+    },
+    {
+      name: "Data & Analytics",
+      description: "Dashboards, reporting, BI.",
+    },
+    {
+      name: "Automation Solutions",
+      description: "Workflow automation, AI agents, integrations.",
+    },
+    {
+      name: "Industry-Specific SaaS",
+      description: "School, healthcare, logistics, retail.",
+    },
+    {
+      name: "Cloud & IT Solutions",
+      description: "Hosting, deployment, APIs, maintenance.",
+    },
+  ],
   techStack: [
     "TypeScript",
     "React",
@@ -42,16 +70,5 @@ export const siteConfig = {
     "Docker",
     "AWS",
   ],
-  projects: [
-    {
-      name: "Stretus",
-      description: "AI-assisted strategy infrastructure for financial platforms.",
-      url: "https://stretus.com/",
-    },
-    {
-      name: "TeethFast",
-      description: "Digital platform for dental lab orders.",
-      url: "https://lab.teethfast.in/",
-    },
-  ],
+  projects,
 } as const;

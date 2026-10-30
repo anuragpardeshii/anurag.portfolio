@@ -47,6 +47,10 @@ ${siteConfig.bio} Based in ${siteConfig.location}.
 
 ${siteConfig.techStack.map((tech) => `- ${tech}`).join("\n")}
 
+## Services
+
+${siteConfig.services.map((service) => `- **${service.name}**: ${service.description}`).join("\n")}
+
 ## Recent Projects
 
 ${siteConfig.projects.map((project) => `- [${project.name}](${project.url}): ${project.description}`).join("\n")}
@@ -78,11 +82,7 @@ function getProjectsMarkdown(): PageMarkdown {
 
 ## Project Gallery
 
-${galleryProjects.map((project) => project.href
-    ? `- [${project.name}](${project.href}) (${project.category}): ${project.description}`
-    : `- ${project.name} (${project.category}, sample placeholder): ${project.description}`).join("\n")}
-
-Sample projects are layout placeholders and do not represent completed work.
+${galleryProjects.map((project) => `- [${project.name}](${project.url}) (${project.category}): ${project.description}`).join("\n")}
 `,
   };
 }
@@ -92,7 +92,11 @@ function getAboutMarkdown(): PageMarkdown {
     title: `About - ${siteConfig.name}`,
     body: `# About ${siteConfig.name}
 
-${siteConfig.name} is a software engineer based in ${siteConfig.location}. ${siteConfig.bio}
+I’m ${siteConfig.name}, a software engineer based in ${siteConfig.location}. I build scalable products with clean, maintainable code.
+
+I enjoy turning ideas into practical software, from intuitive user interfaces to the systems that support them.
+
+[Connect on LinkedIn](${siteConfig.linkedin})
 
 ## Experience
 

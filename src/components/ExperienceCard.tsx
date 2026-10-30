@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 
 export function ExperienceCard() {
@@ -16,8 +17,16 @@ export function ExperienceCard() {
           Experience
         </p>
         <p className="text-lg font-bold text-gray-900">{experience.duration}</p>
-        <p className="mt-2 text-sm font-semibold text-gray-800">
-          {experience.company} <span aria-hidden="true">&rarr;</span>
+        <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-gray-800">
+          <Image
+            src="/imentus-logo.ico"
+            alt=""
+            width={24}
+            height={24}
+            unoptimized
+            className="size-6 shrink-0 object-contain"
+          />
+          <span>{experience.company} <span aria-hidden="true">&rarr;</span></span>
         </p>
         <p className="mt-1 text-xs text-gray-500">{experience.role}</p>
         <p className="mt-1 text-xs text-gray-400">{experience.period}</p>
